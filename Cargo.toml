@@ -8,4 +8,4 @@ csv = "1.1"
 
 [lib]
 name = "_9365_Team02_Rust_ProjectArtifacts"
-path = "src/lib.rs"
+path = "src/Lib.rs"
