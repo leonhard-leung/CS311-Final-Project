@@ -1,9 +1,9 @@
-use crate::documentation::documentation::Documentation;
+use crate::documentation::Documentation::Documentation;
 
-mod documentation { pub mod documentation; }
-mod refactoring { pub mod refactor; }
-mod testing { pub mod numbers; pub mod palindrome; }
-mod debugging {pub mod debugging;}
+mod documentation { pub mod Documentation; }
+mod refactoring { pub mod Refactor; }
+mod testing { pub mod Numbers; pub mod Palindrome; }
+mod debugging {pub mod Debugging;}
 mod advanced_code_editing{pub mod format; pub mod todo;}
 
 mod code_generation {
@@ -15,8 +15,8 @@ mod code_generation {
 
 fn main() {
     Documentation::add(10,10);
-    refactoring::refactor::refactor();
-    debugging::debugging::debugging();
+    refactoring::Refactor::refactor();
+    debugging::Debugging::debugging();
     advanced_code_editing::format::cartesian_product("stephen", "bscs3");
 
     code_generation::derive::main();
