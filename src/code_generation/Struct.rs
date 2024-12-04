@@ -1,4 +1,5 @@
-struct User {
-    name: String,
-    age: u32,
-}
+struct User
+    {
+        name: String,
+        age: u32,
+    }
