@@ -1,7 +1,7 @@
 /** Command line:
 1. cargo fmt - formats all the source code
 2. rustfmt {path of the file} - formats only a speciofic file
-e.g.  rustfmt src/advanced_code_editing/format.rs
+e.g.  rustfmt src/advanced_code_editing/Format
  */
 
 /**This method solves the cartesian product/lists all possible pairs or characters from the two input strings*/
