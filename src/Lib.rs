@@ -65,9 +65,12 @@ pub fn multiply(x: i32, y: i32) -> i32 {
 /// assert_eq!(result, None);
 /// ```
 pub fn divide(x: i32, y: i32) -> Option<i32> {
-    if y == 0 {
-        None
-    } else {
-        Some(x / y)
-    }
+    if y == 0
+        {
+            None
+        }
+    else
+        {
+            Some(x / y)
+        }
 }
