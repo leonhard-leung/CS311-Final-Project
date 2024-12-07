@@ -15,9 +15,10 @@ fn multiply(n1: i32, n2: i32) -> i32
 
 fn divide(n1: f64, n2: f64) -> Result<f64, &'static str>
     {
-        if n2 == 0.0 {
-            panic!()
-        }
+        if n2 == 0.0
+            {
+                panic!()
+            }
     
         Ok(n1 / n2)
     }
@@ -29,28 +30,33 @@ fn odd_number(num: u32) -> bool
 
 fn factorial(num: u32) -> u32
     {
-        if num == 0 || num == 1 {
-            return 1
-        } else {
-            num * factorial(num - 1)
-        }
+        if num == 0 || num == 1
+            {
+                return 1
+            }
+        else
+            {
+                num * factorial(num - 1)
+            }
     }
 
 fn square_root(num: f64) -> Result<f64, &'static str>
     {
-        if num < 0.0 {
-            return Err("Cannot find the square root of a negative number");
-        }
+        if num < 0.0
+            {
+                return Err("Cannot find the square root of a negative number");
+            }
         Ok(num.sqrt())
     }
 
 fn fibonacci(n: u32) -> u32
     {
-        match n {
-            0 => 0,
-            1 => 1,
-            _ => fibonacci(n - 1) + fibonacci(n - 2),
-        }
+        match n
+            {
+                0 => 0,
+                1 => 1,
+                _ => fibonacci(n - 1) + fibonacci(n - 2),
+            }
     }
 
 
