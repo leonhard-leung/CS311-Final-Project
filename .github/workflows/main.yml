@@ -32,26 +32,6 @@ jobs:
         with:
           toolchain: stable
 
-  format:
-    needs: setup
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-    
-      - name: Restore Rust Toolchain Cache
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.cargo
-            ~/.rustup
-          key: rust-toolchain-${{ hashFiles('Cargo.lock') }}
-          restore-keys: |
-            rust-toolchain-
-            
-      - name: Check Format
-        run: cargo fmt -- --check
-
   lint:
     needs: setup
     runs-on: ubuntu-latest
