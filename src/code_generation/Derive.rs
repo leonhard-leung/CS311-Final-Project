@@ -18,10 +18,11 @@ impl User
 
 pub fn main()
     {
-        let user1 = User {
-            name: String::from("Alice"),
-            age: 30,
-        };
+        let user1 = User
+            {
+                name: String::from("Alice"),
+                age: 30,
+            };
     
         // // Debug trait allows us to print the struct
         //  println!("Print: {:?}", user1);

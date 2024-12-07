@@ -4,11 +4,13 @@ fn palindrome_checker(word: String) -> bool
         let max_length = chars.len();
         let half_length = max_length / 2;
     
-        for step in 0..half_length {
-            if chars[step] != chars[max_length - step - 1] {
-                return false;
+        for step in 0..half_length
+            {
+                if chars[step] != chars[max_length - step - 1]
+                    {
+                        return false;
+                    }
             }
-        }
     
         true
     }
