@@ -7,11 +7,12 @@ struct User
     }
 impl User
     {
-        pub fn new(name: String, age: u32) -> Self {
-            Self { name, age }
-        }
+        pub fn new(name: String, age: u32) -> Self
+            {
+                Self { name, age }
+            }
     
-        //----WE CAN IMPLEMENT CLONE FUNCTION HERE----
+             //----WE CAN IMPLEMENT CLONE FUNCTION HERE----
     }
 
 
