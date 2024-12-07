@@ -13,14 +13,15 @@ mod code_generation {
     pub mod simple_macro;
 }
 
-fn main() {
-    Documentation::add(10,10);
-    refactoring::Refactor::refactor();
-    debugging::Debugging::debugging();
-    advanced_code_editing::format::cartesian_product("stephen", "bscs3");
-
-    code_generation::derive::main();
-    // code_generation::simple_macro::main();
-}
-
-
+fn main()
+    {
+        Documentation::add(10,10);
+        refactoring::Refactor::refactor();
+        debugging::Debugging::debugging();
+        advanced_code_editing::format::cartesian_product("stephen", "bscs3");
+    
+        code_generation::derive::main();
+        // code_generation::simple_macro::main();
+    }
+    
+    

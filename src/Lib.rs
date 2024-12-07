@@ -10,9 +10,10 @@
 /// let result = add(2,3);
 /// assert_eq!(result, 5);
 /// ```
-pub fn add(x: i32, y: i32) -> i32 {
-    x + y
-}
+pub fn add(x: i32, y: i32) -> i32
+    {
+        x + y
+    }
 
 
 /// Subtracts one integer from another.
@@ -27,9 +28,10 @@ pub fn add(x: i32, y: i32) -> i32 {
 /// let result = subtract(5, 2);
 /// assert_eq!(result, 3);
 /// ```
-pub fn subtract(x: i32, y: i32) -> i32 {
-    x - y
-}
+pub fn subtract(x: i32, y: i32) -> i32
+    {
+        x - y
+    }
 
 /// Multiplies two integers.
 ///
@@ -43,9 +45,10 @@ pub fn subtract(x: i32, y: i32) -> i32 {
 /// let result = multiply(4, 3);
 /// assert_eq!(result, 12);
 /// ```
-pub fn multiply(x: i32, y: i32) -> i32 {
-    x * y
-}
+pub fn multiply(x: i32, y: i32) -> i32
+    {
+        x * y
+    }
 
 /// Divides one integer by another.
 ///
@@ -64,13 +67,11 @@ pub fn multiply(x: i32, y: i32) -> i32 {
 /// let result = divide(10, 0);
 /// assert_eq!(result, None);
 /// ```
-pub fn divide(x: i32, y: i32) -> Option<i32> {
-    if y == 0
-        {
+pub fn divide(x: i32, y: i32) -> Option<i32>
+    {
+        if y == 0 {
             None
-        }
-    else
-        {
+        } else {
             Some(x / y)
         }
-}
+    }
