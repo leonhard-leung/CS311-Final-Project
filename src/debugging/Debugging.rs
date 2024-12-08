@@ -96,3 +96,11 @@ fn read_numbers_from_csv(filename: &str) -> Result<Vec<i32>, Box<dyn Error>> {
 
     Ok(numbers)
 }
+
+#[test]
+fn test_read_numbers_from_csv() {
+    let result = read_numbers_from_csv("src/debugging/Numbers.csv");
+
+    assert!(result.is_ok());
+    assert_eq!(result.unwrap(), vec![234, 789, 643, 173, 092, 069]);
+}
