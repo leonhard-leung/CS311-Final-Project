@@ -1,5 +1,5 @@
 [package]
-name = "_9365_Team02_Rust_Project-Artifacts"
+name = "_9365_team02_rust_project_artifacts"
 version = "0.1.0"
 edition = "2021"
 
@@ -7,5 +7,5 @@ edition = "2021"
 csv = "1.1"
 
 [lib]
-name = "_9365_Team02_Rust_ProjectArtifacts"
+name = "_9365_team02_rust_project_artifacts"
 path = "src/Lib.rs"
