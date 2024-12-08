@@ -3,7 +3,7 @@
 version = 3
 
 [[package]]
-name = "_9365_Team02_Rust_Project-Artifacts"
+name = "_9365_team02_rust_project_artifacts"
 version = "0.1.0"
 dependencies = [
  "csv",
