@@ -6,7 +6,7 @@
 ///
 /// # Example
 /// ```
-/// use _9365_Team02_Rust_ProjectArtifacts::add;
+/// use _9365_team02_rust_project_artifacts::add;
 /// let result = add(2,3);
 /// assert_eq!(result, 5);
 /// ```
@@ -24,7 +24,7 @@ pub fn add(x: i32, y: i32) -> i32
 ///
 /// # Example
 /// ```
-/// use _9365_Team02_Rust_ProjectArtifacts::subtract;
+/// use _9365_team02_rust_project_artifacts::subtract;
 /// let result = subtract(5, 2);
 /// assert_eq!(result, 3);
 /// ```
@@ -41,7 +41,7 @@ pub fn subtract(x: i32, y: i32) -> i32
 ///
 /// # Example
 /// ```
-/// use _9365_Team02_Rust_ProjectArtifacts::multiply;
+/// use _9365_team02_rust_project_artifacts::multiply;
 /// let result = multiply(4, 3);
 /// assert_eq!(result, 12);
 /// ```
@@ -60,7 +60,7 @@ pub fn multiply(x: i32, y: i32) -> i32
 ///
 /// # Example
 /// ```
-/// use _9365_Team02_Rust_ProjectArtifacts::divide;
+/// use _9365_team02_rust_project_artifacts::divide;
 /// let result = divide(10, 2);
 /// assert_eq!(result, Some(5));
 ///
