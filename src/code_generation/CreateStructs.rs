@@ -1,4 +1,3 @@
-// Generating repetitive code with just one struct
 macro_rules! create_structs
     {
         ($($name:ident { $($field:ident: $type:ty),* $(,)? }),*) => {

@@ -31,7 +31,7 @@ pub fn debugging() -> Result<(), Box<dyn Error>> {
             println!("{i}");
         }
 
-    // Uncommenting the line below would cause a panic due to out-of-bounds access:
+    // Uncommenting below causes out-of-bounds panic:
     println!("Accessing out-of-bounds index: {}", list[5]);
 
     // Read CSV data
@@ -58,7 +58,10 @@ fn read_numbers_from_csv(filename: &str) -> Result<Vec<i32>, Box<dyn Error>> {
     if !Path::new(filename).exists()
         {
             return Err(From::from(format!(
-                "Error: File not found at path '{}'. Please provide a valid file path.",
+                r#"
+                    Error: File not found at path '{}'.
+                    Please provide a valid file path.
+                "#,
                 filename
             )));
         }
@@ -66,7 +69,10 @@ fn read_numbers_from_csv(filename: &str) -> Result<Vec<i32>, Box<dyn Error>> {
     if metadata(filename)?.is_dir()
         {
             return Err(From::from(format!(
-                "Error: The path '{}' is a directory, not a file. Please provide a valid file.",
+                r#"
+                    Error: The path '{}' is a directory, not a file.
+                    Please provide a valid file.
+                "#,
                 filename
             )));
         }
@@ -74,11 +80,17 @@ fn read_numbers_from_csv(filename: &str) -> Result<Vec<i32>, Box<dyn Error>> {
     let file = File::open(filename).map_err(|e|
         {
             format!(
-                "Error: Failed to open file '{}'. Please check permissions and try again. Details: {}",
+                r#"
+                    Error: Failed to open file '{}'.
+                    Please check permissions and try again.
+                    Details: {}
+                "#,
                 filename, e
             )
         })?;
-    let mut rdr = ReaderBuilder::new().from_reader(BufReader::new(file));
+    let mut rdr = ReaderBuilder
+        ::new()
+        .from_reader(BufReader::new(file));
     let mut numbers = Vec::new();
 
     for result in rdr.records()
@@ -89,7 +101,15 @@ fn read_numbers_from_csv(filename: &str) -> Result<Vec<i32>, Box<dyn Error>> {
                     match value.trim().parse::<i32>()
                         {
                             Ok(num) => numbers.push(num),
-                            Err(_) => eprintln!("Warning: Could not parse '{}' as a number.", value),
+                            Err(_) =>
+                                {
+                                    eprintln!(
+                                        r#"
+                                            Warning: Could not parse '{}'
+                                            as a number.
+                                        "#,
+                                        value)
+                                },
                         }
                 }
         }
@@ -99,7 +119,8 @@ fn read_numbers_from_csv(filename: &str) -> Result<Vec<i32>, Box<dyn Error>> {
 
 #[test]
 fn test_read_numbers_from_csv() {
-    let result = read_numbers_from_csv("src/debugging/Numbers.csv");
+    let result =
+        read_numbers_from_csv("src/debugging/Numbers.csv");
 
     assert!(result.is_ok());
     assert_eq!(result.unwrap(), vec![234, 789, 643, 173, 092, 069]);

@@ -10,6 +10,7 @@ To be demonstrated:
     - display where a method/variable is used
 
 User defined Shortcuts
-    1. settings (CTRL + Alt + S) -> keymap -> search (termninal) - right click -> add keyboard shortcut
+    1. settings (CTRL + Alt + S) -> keymap -> search (termninal) -
+        right click -> add keyboard shortcut
     2. add a preferred shortcut (CTRL + ` )
     3. demonstrate the newly created shortcut
