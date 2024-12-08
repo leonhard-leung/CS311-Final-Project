@@ -15,5 +15,3 @@ struct Airplane
         manufacturer: String,
         plane_type: String,
     }
-
-//todo: implement Vehicle for Car/Airplane

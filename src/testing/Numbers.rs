@@ -59,18 +59,9 @@ fn fibonacci(n: u32) -> u32
             }
     }
 
-
-/** ================================================================================================*/
-/** ================================================================================================*/
-
-/**
-1. tmod - test module */
-
 #[cfg(test)]
 mod tests {
     use super::*; //allows test module to have access to parent module
-
-    //add test method here
 
     #[test]
     fn test_subtract()
@@ -113,7 +104,9 @@ mod tests {
     fn test_square_root()
         {
             assert_eq!(square_root(9.0), Ok(3.0));
-            assert_eq!(square_root(-1.0), Err("Cannot find the square root of a negative number"));
+            assert_eq!(
+                square_root(-1.0),
+                Err("Cannot find the square root of a negative number"));
         }
 
     #[test]
@@ -125,7 +118,6 @@ mod tests {
             assert_eq!(fibonacci(6), 8);
         }
 
-    // should panic testing
     #[test]
     #[should_panic]
     fn test_division_by_zero()
