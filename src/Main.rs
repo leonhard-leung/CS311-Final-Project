@@ -8,9 +8,9 @@ mod advanced_code_editing{pub mod format; pub mod todo;}
 
 mod code_generation {
     pub mod derive;
-    pub mod create_structs;
-    pub mod traits_and_structs;
-    pub mod simple_macro;
+    pub mod CreateStructs;
+    pub mod TraitsAndStructs;
+    pub mod SimpleMacro;
 }
 
 fn main()
