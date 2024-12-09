@@ -1,0 +1,68 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build
+        run: cargo build --verbose
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check Lint
+        run: cargo clippy -- -D warnings
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run Tests
+        run: cargo test --verbose
+
+  upload-artifact:
+    runs-on: ubuntu-latest
+    needs: [build, lint, test]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build Artifact
+        run: cargo build --release
+
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: rust-build-artifact
+          path: target/release/
+
+      - name: Clean Build Files
+        run: cargo clean
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: upload-artifact
+    steps:
+      - name: Download Build Artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: rust-build-artifact
+
+      - name: Deploy to Staging
+        run: |
+          echo "Deploying to staging environment..."
+          ls
