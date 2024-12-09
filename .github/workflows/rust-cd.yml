@@ -1,0 +1,22 @@
+name: continuous deployment
+
+on:
+  workflow_run:
+    workflows: ["continuous integration"]
+    types:
+      - completed
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Download Build Artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: rust-build-artifact
+
+      - name: Deploy to Staging
+        run: |
+          echo "Deploying to staging environment..."
+          ls target/release
